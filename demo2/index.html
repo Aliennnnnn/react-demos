@@ -9,10 +9,14 @@
 </head>
 <body>
 	<div id="example">
-		
+	
 	</div>
 
 	<script type="text/babel">	
+		{/*
+			上述代码体现了JSX的基本语法:遇到HTML标签（以<开头），就用HTML规则解析;
+			遇到代码块，（以 { 开头），就用JavaScript规则解析。
+		*/}
 		var names = ['Alice', 'Emily', 'Kate'];
 
 		ReactDOM.render(
@@ -25,10 +29,7 @@
 		  </div>,
 		  document.getElementById('example')
 		);
-		<!--
-			上述代码体现了JSX的基本语法:遇到HTML标签（以<开头），就用HTML规则解析；
-			遇到代码块，（以 { 开头），就用JavaScript规则解析。
-		-->
+		
 	</script>		
 </body>
 </html>
