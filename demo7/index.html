@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    </head>
+    <body>
+      <div id="example">
+        
+      </div>
+
+      <script type="text/babel">  
+            
+          { /*
+               组件是存在于内存中的一种数据结构，叫做虚拟DOM，
+               只有当它插入文档之后才会变成真实的DOM。
+               ref属性： 从组件获取真实的DOM节点；
+
+          */}
+            
+            
+            var MyComponent = React.createClass({
+              handleClick: function(){
+                this.refs.myTextInput.focus();
+              },
+              render: function(){
+                return(
+                  <div>
+                    <input type="text" ref="myTextInput"/>
+                    <input type="buttton" value="Click Me" onClick={this.handleClick} />
+                  </div>
+                );
+              }
+            });
+
+            ReactDOM.render(
+              <MyComponent />,
+              document.getElementById('example')
+            );
+      </script> 
+    </body>
+</html>
