@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+		<script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+		<script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    </head>
+    <body>
+    	<div id="example">
+		
+		</div>
+		<script type="text/babel">	
+			var arr = [
+				<h1>Hello World!</h1>,
+				<h2>React is awesome!</h2>,
+			];
+			ReactDOM.render(
+	  			<div>{arr}</div>,
+	 			document.getElementById('example')
+			);
+			<!--
+				JSX允许直接在模板插入JavaScript变量。
+				如果这个变量是一个数组，则会自动展开这个数组的所有成员。
+			-->
+		</script>	
+    </body>
+</html>
