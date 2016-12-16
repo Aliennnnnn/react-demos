@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    </head>
+    <body>
+      <div id="example">
+        
+      </div>
+
+      <script type="text/babel">  
+            
+        { /*
+            React不依赖jQuery，使用其他的库可以达到同样的效果。
+			
+        */}
+        
+           
+          	var Content = React.createClass({
+             	render: function() {
+               		return <p>content</p>;              		
+           		},
+           	});
+
+           	var Comment = React.createClass({
+           		render: function(){
+           			return <div>
+           				<select>
+           					<option value="1">Tim</option>
+           					<option value="2">John</option>
+           					<option value="3">Hank</option>
+           				</select>
+           				<Content></Content>
+           				</div>;
+           		},
+           	});
+
+           	React.render(<Comment></Comment>,document.body);           
+      </script> 
+    </body>
+</html>
