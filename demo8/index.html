@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    </head>
+    <body>
+        <div id="example">
+            
+        </div>
+
+        <script type="text/babel">  
+             {/*
+                getInitialState用来定义初始状态;
+                setState用来修改状态值;
+                this.state用来读取当前状态;
+                this.state和this.props区别：
+                    this.state用来表示那些随着用户互动而产生变化的特性,
+                    this.props用来表示那些一旦定义，就不再改变的特性。
+             */} 
+            
+            var LikeButton = React.createClass({
+                getInitialState: function(){
+                    return { liked: false };
+                },
+                handleClick: function(){
+                    this.setState({liked: !this.state.liked});
+                },
+                render: function(){
+                    var text = this.state.liked ? 'like' : 'haven\'t liked';
+                    return(
+                        <p onClick={this.handleClick}>
+                            You {text} this.Toggle to change.
+                        </p>
+                    );
+                }
+            });
+
+            React.render(
+                <LikeButton />,
+                document.body
+            )
+         
+                
+                
+        </script> 
+    </body>
+</html>

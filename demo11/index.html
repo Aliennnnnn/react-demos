@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    </head>
+    <body>
+      <div id="example">
+        
+      </div>
+
+      <script type="text/babel">  
+            
+        { /*
+            React不依赖jQuery，使用其他的库可以达到同样的效果。
+			
+        */}
+        
+           
+           var UserGithub = React.createClass({
+             getInitialState: function() {
+               return {
+                 username: '',
+                 githubUrl: ''
+               };
+             },
+
+             componentDidMount: function() {
+               $.get(this.props.source, function(result) {
+                 var github = result[0];
+                 if (this.isMounted()) {
+                   this.setState({
+                     username: github.owner.login,
+                     githubUrl: github.html_url
+                   });
+                 }
+               }.bind(this));
+             },
+
+             render: function() {
+               return (
+                 <div>
+                   {this.state.username}'s github url is
+                   <a href={this.state.githubUrl}>here</a>.
+                 </div>
+               );
+             }
+           });
+
+           ReactDOM.render(
+             <UserGithub source="https://api.github.com/users/octocat/gists" />,
+             document.body
+           );
+ 
+            
+            
+      </script> 
+    </body>
+</html>

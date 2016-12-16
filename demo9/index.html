@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    </head>
+    <body>
+      <div id="example">
+        
+      </div>
+
+      <script type="text/babel">  
+            
+        { /*
+            文本框里的值属于用户与组件的互动，
+            不能用this.props.value读取，而要用event.target.value读取
+
+        */}
+       var Input = React.createClass({
+            getInitialState: function(){
+                return {value: 'Hello~'};
+            },
+            handleChange: function(event){
+                this.setState({
+                    value: event.target.value
+                });
+            },
+            render: function(){
+                var value = this.state.value;
+                return(                   
+                    <div>
+                        <input type="text" value={value} onChange={this.handleChange} />
+                        <p>{value}</p>
+                    </div>
+                );
+            }
+       });
+
+        ReactDOM.render(<Input/>,document.body);
+            
+            
+            
+      </script> 
+    </body>
+</html>
