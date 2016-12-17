@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+        <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    </head>
+    <body>
+      	<div id="example">
+        
+      	</div>
+
+      	<script type="text/babel">  
+            
+       	 { /*
+       	 	键盘事件演示		
+       	 */}
+       	var HelloWorld = React.createClass({
+       		getInitialState: function(){
+       			return {
+       				password: ''
+       			};
+       		},
+       		handleKeyPress: function(event){
+       			this.setState({
+                    password: this.state.password + event.which
+                });
+                console.log(this.state)
+       		},
+            handleChange: function(event){
+                 event.target.value='';
+            },
+    		render: function () {
+                return <div>
+                <input onKeyPress={this.handleKeyPress} onChange={this.handleChange}></input>
+                <p style={{
+                    'display': this.state.password.indexOf('495051') >= 0 ? 'inline' : 'none'
+                    }}>You got it!</p>
+                </div>;
+            },
+       	});
+
+       React.render(<HelloWorld></HelloWorld>,document.body);
+      </script> 
+    </body>
+</html>
